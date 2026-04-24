@@ -19,7 +19,7 @@
   btn.addEventListener('click', dismiss);
 
   // also auto-dismiss after 6 seconds if they don't click
-  setTimeout(dismiss, 6000);
+  setTimeout(dismiss, 4500);
 })();
 
 
@@ -242,7 +242,7 @@ if (contactForm) {
 }
 
 /* ---- Smooth scroll for anchor links ---- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.nav-logo):not(.footer-logo)').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (target) {
@@ -268,14 +268,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const filterBtns2 = document.querySelectorAll('.filter-btn');
 const projCards2  = document.querySelectorAll('.proj-card');
 
+// default: show only frontend on load
+projCards2.forEach(card => {
+  card.style.display = card.dataset.cat === 'frontend' ? '' : 'none';
+});
+
 filterBtns2.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns2.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
     projCards2.forEach(card => {
-      const show = filter === 'all' || card.dataset.cat === filter;
-      card.style.display = show ? '' : 'none';
+      card.style.display = card.dataset.cat === filter ? '' : 'none';
     });
   });
+});
+/* ---- Logo click → scroll to top (all devices) ---- */
+function scrollToTop() {
+  // close mobile menu if open
+  var ham  = document.getElementById('hamburger');
+  var menu = document.getElementById('navMenu');
+  var ov   = document.getElementById('navOverlay');
+  if (menu && menu.classList.contains('open')) {
+    ham  && ham.classList.remove('active');
+    menu.classList.remove('open');
+    ov   && ov.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  // scroll to top — try smooth, fallback for older mobile browsers
+  try {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    window.scrollTo(0, 0);
+  }
+}
+
+['navLogoLink','footerLogoLink'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  // both click (desktop) and touchend (mobile)
+  el.addEventListener('click',    function(e){ e.preventDefault(); scrollToTop(); });
+  el.addEventListener('touchend', function(e){ e.preventDefault(); scrollToTop(); });
 });
