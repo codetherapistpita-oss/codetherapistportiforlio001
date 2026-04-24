@@ -11,12 +11,49 @@
 </head>
 <body>
 
+  <!-- WELCOME SCREEN -->
+  <div id="welcomeScreen">
+    <!-- radial glow bg -->
+    <div class="wc-glow"></div>
+
+    <!-- 3 circle icons -->
+    <div class="wc-icons">
+      <div class="wc-icon-circle" style="animation-delay:0.1s">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="wc-icon-circle" style="animation-delay:0.25s">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="wc-icon-circle" style="animation-delay:0.4s">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S9.1 17.13 9.18 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      </div>
+    </div>
+
+    <!-- main text -->
+    <div class="wc-text">
+      <div class="wc-line-wrap"><h1 class="wc-top" style="animation-delay:0.5s">Welcome To My</h1></div>
+      <div class="wc-line-wrap"><h1 class="wc-bottom" style="animation-delay:0.7s">Portfolio Website</h1></div>
+    </div>
+
+    <!-- link -->
+    <div class="wc-link-wrap" style="animation-delay:0.95s">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span>scalepeedia.com</span>
+    </div>
+
+    <!-- click to enter -->
+    <button class="wc-enter" id="wcEnter" style="animation-delay:1.2s">
+      Click to Enter
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
   <div id="cursor"></div>
   <div id="cursor-trail"></div>
 
   <!-- PRELOADER -->
   <div id="preloader">
-    <div class="pre-logo">Scale<span>.</span></div>
+    <div class="pre-logo">Scale Peedia<span>.</span></div>
     <div class="pre-bar"><div class="pre-fill"></div></div>
   </div>
 
@@ -24,7 +61,7 @@
   <header id="header">
     <nav class="nav-inner">
       <a href="#home" class="nav-logo">
-        <img src="logo.jpg" alt="Scale Peedia" class="logo-img" />
+        <img src="Portfolio Picture/My logo.jpg" alt="Scale Peedia" class="logo-img" />
         Scale<span>Peedia</span>
       </a>
 
@@ -37,9 +74,9 @@
         <li><a href="#contact"  class="nav-link">Contact</a></li>
       </ul>
 
-      <a href="cv.pdf" target="_blank" rel="noopener" class="nav-cv-btn">
+      <a href="Abdulrahmon_CV.docx" target="_blank" rel="noopener" class="nav-cv-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        View CV
+        Download CV
       </a>
 
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -64,7 +101,7 @@
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">View My Work</a>
-          <a href="#contact"  class="btn-secondary">Hire Me</a>
+          <a href="https://wa.me/2349061707275?text=Hi%20Abdulrahmon%2C%20I%20want%20to%20hire%20you" target="_blank" rel="noopener" target="_blank" rel="noopener" class="btn-secondary">Get a Quote</a>
         </div>
         <div class="hero-socials">
           <a href="mailto:thescalepeedia@gmail.com" class="hero-social-link" title="Email">
@@ -91,7 +128,7 @@
         <div class="hero-blob"></div>
         <!-- actual photo inside blob shape -->
         <div class="hero-photo-frame">
-          <img src="me.jpg" alt="Abdulrahmon" class="hero-photo" />
+          <img src="Portfolio Picture/Picture2.png" alt="Abdulrahmon" class="hero-photo" />
         </div>
         <!-- floating chips -->
         <div class="float-chip chip-top">
@@ -117,7 +154,7 @@
         <div class="about-img-col reveal-left">
           <div class="about-img-wrap">
             <div class="about-blob"></div>
-            <img src="me.jpg" alt="Abdulrahmon" class="about-img" />
+            <img src="Portfolio Picture/Picture1 (2).jpg" alt="Abdulrahmon" class="about-img" />
             <div class="about-exp-badge">
               <span class="exp-num">3+</span>
               <span class="exp-label">Years of<br>Experience</span>
@@ -143,10 +180,10 @@
           </div>
 
           <div class="about-btns">
-            <a href="#contact"  class="btn-primary">Hire Me</a>
-            <a href="cv.pdf" target="_blank" rel="noopener" class="btn-cv">
+            <a href="https://wa.me/2349061707275?text=Hi%20Abdulrahmon%2C%20I%20want%20to%20hire%20you" target="_blank" rel="noopener" target="_blank" rel="noopener" class="btn-primary">Get a Quote</a>
+            <a href="Abdulrahmon_CV.docx" target="_blank" rel="noopener" class="btn-cv">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              View CV
+              Download CV
             </a>
           </div>
         </div>
@@ -442,43 +479,41 @@
 
       <div class="proj-grid">
 
-        <!-- ═══ FRONTEND ═══ -->
+        <!-- ═══════════════════════════════
+             FRONTEND  (6 cards)
+        ═══════════════════════════════ -->
 
         <div class="proj-card reveal" data-delay="0" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0d1117,#1a1a2e,rgba(97,218,251,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.6rem;font-weight:700;color:#61DAFB;">React</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">E-Commerce Store</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/react-store.jpg -->
+            <img src="Portfolio Picture/React Project.png" alt="React E-Commerce Store" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://react-ecommerce15.netlify.app/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">01</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2024</span></div>
             <h3 class="proj-title">React E-Commerce Store</h3>
-            <p class="proj-desc">A fully functional e-commerce platform built with React — product listings, cart management, filtering, and a smooth checkout experience.</p>
+            <p class="proj-desc">A fully functional e-commerce platform built with React — product listings, cart management, filtering, and smooth checkout experience.</p>
             <div class="proj-tags"><span>React</span><span>JavaScript</span><span>CSS3</span><span>HTML5</span><span>Netlify</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="80" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0f0f0f,#1c1c2e,rgba(13,223,130,.15));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.6rem;font-weight:700;color:#fff;">Creativity</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Fashion Store</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/creativity-store.jpg -->
+            <img src="Portfolio Picture/Creativity Project.png" alt="Creativity Fashion Store" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://creativity-store.vercel.app/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">02</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2024</span></div>
@@ -489,18 +524,16 @@
         </div>
 
         <div class="proj-card reveal" data-delay="160" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1628,#1e3a5f,rgba(56,189,248,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#38bdf8;">Travel</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Booking Platform</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/booking.jpg -->
+            <img src="Portfolio Picture/Travel Project.png" alt="Travel Booking Platform" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Booking-Website/index.html" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Booking-Website/index.html" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">03</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2024</span></div>
@@ -511,18 +544,16 @@
         </div>
 
         <div class="proj-card reveal" data-delay="240" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0f00,#3d2b1f,rgba(245,158,11,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#f59e0b;">Furniro</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Furniture Store</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/furniro.jpg -->
+            <img src="Portfolio Picture/Furniture Project.png" alt="Furniro Furniture E-Commerce" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Furniture-eCommerce-Website/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Furniture-eCommerce-Website/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">04</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2024</span></div>
@@ -533,18 +564,16 @@
         </div>
 
         <div class="proj-card reveal" data-delay="320" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0a2e,#2d1b69,rgba(167,139,250,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#c4b5fd;">Lunabelle</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Fashion Store</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/lunabelle.jpg -->
+            <img src="Portfolio Picture/Lunnabella Fashion Project.png" alt="Lunabelle Fashion Store" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://lunabelle.myeasyorders.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">05</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2025</span></div>
@@ -555,18 +584,16 @@
         </div>
 
         <div class="proj-card reveal" data-delay="400" data-cat="frontend">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a,rgba(13,223,130,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#0ddf82;">Ruqy</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Islamic Fashion</div>
-            </div>
+          <div class="proj-thumb">
+            <!-- ✏️ Replace src with your image e.g. images/ruqy.jpg -->
+            <img src="Portfolio Picture/Ruqy Islamic Fashion Project.png" alt="Ruqy Islamic Fashion Store" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://ruqy.vercel.app/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">06</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Frontend</span><span class="proj-year">2025</span></div>
@@ -576,21 +603,20 @@
           </div>
         </div>
 
-        <!-- ═══ WORDPRESS ═══ -->
+        <!-- ═══════════════════════════════
+             WORDPRESS  (6 cards)
+        ═══════════════════════════════ -->
 
         <div class="proj-card reveal" data-delay="0" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#071828,#0b2040,rgba(1,80,200,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#60a5fa;">Semee F</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Engineering</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Samee Engeener Project.png" alt="Semee F Engineering" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://semeefengineering.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">01</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
@@ -601,18 +627,15 @@
         </div>
 
         <div class="proj-card reveal" data-delay="80" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1f0a,#1a3d1a,rgba(34,197,94,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.3rem;font-weight:700;color:#4ade80;">Sommysun</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Live Services</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Summysun service Project.png" alt="Sommysun Live Services" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://sommysunliveservices.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">02</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
@@ -623,40 +646,34 @@
         </div>
 
         <div class="proj-card reveal" data-delay="160" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0a00,#3d2200,rgba(251,146,60,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#fb923c;">FixPower</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Nigeria</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Fixpower Project.png" alt="FixPower Nigeria" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://fixpower.ng/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">03</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">FixPower Nigeria</h3>
-            <p class="proj-desc">A professional WordPress website for a power and electrical services company in Nigeria — service pages, trust signals, and easy enquiry flow.</p>
+            <p class="proj-desc">A professional WordPress website for a power and electrical services company — service pages, trust signals, and easy enquiry flow.</p>
             <div class="proj-tags"><span>WordPress</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="240" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#071818,#0d2823,rgba(1,140,84,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#0ddf82;">EasyGets</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Nigeria</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Easy Gadget Project.png" alt="EasyGets Nigeria" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://easygets.ng/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">04</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
@@ -667,40 +684,34 @@
         </div>
 
         <div class="proj-card reveal" data-delay="320" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1c1c0a,#3a3a14,rgba(234,179,8,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.1rem;font-weight:700;color:#fde047;text-align:center;padding:0 10px;">KMG Gebäude</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Germany</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/KMG PROJECT.png" alt="KMG Gebäude Service" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://kmgebaeudeservicehausmeisterservice.de/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">05</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">KMG Gebäude Service</h3>
-            <p class="proj-desc">A professional WordPress service site for a German building maintenance and caretaker company — built with a clean, trustworthy design.</p>
+            <p class="proj-desc">A professional WordPress service site for a German building maintenance and caretaker company — clean, trustworthy design.</p>
             <div class="proj-tags"><span>WordPress</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="400" data-cat="wordpress">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1f0a,#163016,rgba(34,197,94,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#86efac;">Usman</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Veggies Store</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Usman Vegees.png" alt="Usman Veggies" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://www.usmanveggies.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">06</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">WordPress</span><span class="proj-year">2025</span></div>
@@ -710,43 +721,39 @@
           </div>
         </div>
 
-        <!-- ═══ SHOPIFY ═══ -->
+        <!-- ═══════════════════════════════
+             SHOPIFY  (6 cards)
+        ═══════════════════════════════ -->
 
         <div class="proj-card reveal" data-delay="0" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0a1a,#2d1030,rgba(217,70,239,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#e879f9;">Beauty by Amani</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Shopify Beauty</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Beautywithamani Project.png" alt="Beauty by Amani" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://beautybyamani.shop/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">01</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">Beauty by Amani</h3>
-            <p class="proj-desc">A stunning Shopify beauty store with elegant product displays, appointment booking integration, and a seamless mobile-first checkout.</p>
+            <p class="proj-desc">A stunning Shopify beauty store with elegant product displays, appointment booking integration, and seamless mobile-first checkout.</p>
             <div class="proj-tags"><span>Shopify</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="80" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#050505,#111,rgba(255,255,255,.1));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:2rem;font-weight:800;color:#fff;letter-spacing:6px;">VYSN</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Fashion Brand</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/VYSN Fashion Project.png" alt="VYSN Fashion" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://www.vysn.com" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">02</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
@@ -757,18 +764,15 @@
         </div>
 
         <div class="proj-card reveal" data-delay="160" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0a10,#2d0f1c,rgba(244,63,94,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.2rem;font-weight:700;color:#fb7185;text-align:center;">Fashion Flare<br>Boutique</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Shopify</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/fashionflareboutique Project.png" alt="Fashion Flare Boutique" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://www.fashionflareboutique.com" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">03</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
@@ -779,18 +783,15 @@
         </div>
 
         <div class="proj-card reveal" data-delay="240" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#071818,#0d2823,rgba(20,184,166,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#2dd4bf;">Hello Tushy</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Shopify DTC</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/hellotushy Project.png" alt="Hello Tushy" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://hellotushy.com" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">04</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
@@ -801,40 +802,34 @@
         </div>
 
         <div class="proj-card reveal" data-delay="320" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0d1a1a,#1a3030,rgba(6,182,212,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#67e8f9;">Raee Industries</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Shopify B2B</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/JFAcostmetics.png" alt="JFA Cosmetics" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://raeeindustries.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://jfacosmetics.com" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">05</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
-            <h3 class="proj-title">Raee Industries</h3>
+            <h3 class="proj-title">JFA Cosmetics</h3>
             <p class="proj-desc">A B2B-focused Shopify store for an industrial products company with bulk ordering, wholesale pricing tiers, and professional branding.</p>
             <div class="proj-tags"><span>Shopify</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="400" data-cat="shopify">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0a00,#3d1a00,rgba(234,88,12,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#fdba74;letter-spacing:2px;">GRUNT STYLE</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Apparel Brand</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/gruntstyle Proect.png" alt="Grunt Style" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://www.gruntstyle.com/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">06</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Shopify</span><span class="proj-year">2025</span></div>
@@ -844,87 +839,77 @@
           </div>
         </div>
 
-        <!-- ═══ PORTFOLIO & LANDING PAGE ═══ -->
+        <!-- ═══════════════════════════════
+             PORTFOLIO & LANDING PAGE  (7 cards)
+        ═══════════════════════════════ -->
 
         <div class="proj-card reveal" data-delay="0" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0500,#3d1500,rgba(239,68,68,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.6rem;font-weight:800;color:#fca5a5;letter-spacing:3px;">SPYLT</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Energy Drink Brand</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/spylt-gsap- Project.png" alt="SPYLT Energy Drink Brand" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://spylt-gsap-website.vercel.app/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">01</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">SPYLT — Energy Drink Brand</h3>
-            <p class="proj-desc">A visually stunning animated brand website for an energy drink — built with Next.js and GSAP for cinematic scroll animations and flavour reveals.</p>
+            <p class="proj-desc">A visually stunning animated brand website for an energy drink — Next.js and GSAP for cinematic scroll animations and flavour reveals.</p>
             <div class="proj-tags"><span>Next.js</span><span>GSAP</span><span>JavaScript</span><span>CSS3</span><span>Vercel</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="80" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0f0f0f,#1a1a1a,rgba(99,102,241,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#a5b4fc;">Ghadeer Studio</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Design Portfolio</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/ghadeerstudio Project.png" alt="Ghadeer Studio Portfolio" class="proj-img" />
             <div class="proj-overlay-hover">
               <a href="https://ghadeerstudio.vercel.app/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">02</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">Ghadeer Studio Portfolio</h3>
-            <p class="proj-desc">A sleek creative agency portfolio website built with Next.js — smooth animations, project showcases, and an immersive dark design aesthetic.</p>
+            <p class="proj-desc">A sleek creative agency portfolio — smooth animations, project showcases, and an immersive dark design aesthetic built with Next.js.</p>
             <div class="proj-tags"><span>Next.js</span><span>React</span><span>JavaScript</span><span>CSS3</span><span>Vercel</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="160" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#050520,#0d0d3d,rgba(99,102,241,.25));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#818cf8;">PlayNova</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Mobile Games</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/PlayNova Project.png" alt="PlayNova Mobile Games" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Mobile-Games-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Mobile-Games-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">03</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
             <h3 class="proj-title">PlayNova — Mobile Games</h3>
-            <p class="proj-desc">A feature-rich gaming landing page with articles, gallery, pricing plans, team showcase, testimonials, and a modern gaming aesthetic.</p>
+            <p class="proj-desc">A feature-rich gaming landing page with articles, gallery, pricing plans, team showcase, and a modern gaming aesthetic.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="240" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0d0520,#1a0d3d,rgba(139,92,246,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#c4b5fd;">Board</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Gaming Website</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/PlayBoard Project.png" alt="Board Gaming Website" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Gaming-Website/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Gaming-Website/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">04</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2024</span></div>
@@ -935,62 +920,53 @@
         </div>
 
         <div class="proj-card reveal" data-delay="320" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1a10,#142814,rgba(34,197,94,.18));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#86efac;">Customify</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Creative Agency</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/Costimify Project.png" alt="Customify Creative Agency" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Customify-Personalizable-Website/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Customify-Personalizable-Website/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">05</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2024</span></div>
             <h3 class="proj-title">Customify — Creative Agency</h3>
-            <p class="proj-desc">An interactive agency website with personalizable themes, colour switching, dynamic backgrounds, and full team and services showcase.</p>
+            <p class="proj-desc">An interactive agency website with personalizable themes, colour switching, dynamic backgrounds, and a full services showcase.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="400" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a0800,#3d1800,rgba(234,88,12,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;color:#fdba74;">Food Lover</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">Restaurant</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/FoodLOver Project.png" alt="Food Lover Restaurant" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/Restaurant-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/Restaurant-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">06</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2024</span></div>
             <h3 class="proj-title">Food Lover Restaurant</h3>
-            <p class="proj-desc">A rich restaurant landing page with menu showcase, gallery, table booking form, and a warm appetising design to drive more reservations.</p>
+            <p class="proj-desc">A rich restaurant landing page with menu showcase, gallery, table booking form, and a warm appetising design to drive reservations.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
         </div>
 
         <div class="proj-card reveal" data-delay="480" data-cat="portfolio">
-          <div class="proj-thumb" style="background:linear-gradient(135deg,#050510,#0d0d20,rgba(6,182,212,.2));position:relative;overflow:hidden;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--display);font-size:1.5rem;font-weight:700;color:#67e8f9;">MCBrain</div>
-              <div style="font-size:.7rem;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase;">AI Landing Page</div>
-            </div>
+          <div class="proj-thumb">
+            <img src="Portfolio Picture/MCbrain Project.png" alt="MCBrain AI Landing Page" class="proj-img" />
             <div class="proj-overlay-hover">
-              <a href="https://scalepeedia15.github.io/AI-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
+              <a href="https://ahmedragab15.github.io/AI-Landing-Page/" target="_blank" rel="noopener" class="proj-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project →
               </a>
             </div>
-            <div class="proj-num"></div>
+            <span class="proj-num">07</span>
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
@@ -1156,7 +1132,7 @@
       <div class="container footer-top-inner">
         <div class="footer-brand">
           <a href="#home" class="footer-logo">
-            <img src="logo.jpg" alt="Scale Peedia" class="logo-img" />
+            <img src="Portfolio Picture/My logo.jpg" alt="Scale Peedia" class="logo-img" />
             Scale<span>Peedia</span>
           </a>
           <p class="footer-tagline">Turning ideas into digital experiences that convert, impress, and last.</p>
@@ -1198,9 +1174,9 @@
             <li><a href="https://github.com/Scalepeedia" target="_blank" rel="noopener">GitHub</a></li>
             <li class="footer-avail-item"><span class="avail-dot"></span>Available for Work</li>
           </ul>
-          <a href="cv.pdf" target="_blank" rel="noopener" class="footer-cv-btn">
+          <a href="Abdulrahmon_CV.docx" target="_blank" rel="noopener" class="footer-cv-btn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            View CV
+            Download CV
           </a>
         </div>
       </div>

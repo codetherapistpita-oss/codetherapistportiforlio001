@@ -1,6 +1,28 @@
-/* ==============================================
-   SCALE PEEDIA  |  script.js
-   ============================================== */
+/* ---- Welcome Screen — Yassin style ---- */
+(function () {
+  const screen = document.getElementById('welcomeScreen');
+  const btn    = document.getElementById('wcEnter');
+  if (!screen) return;
+
+  // lock scroll
+  document.body.style.overflow = 'hidden';
+
+  function dismiss() {
+    screen.classList.add('wc-exit');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      screen.style.display = 'none';
+    }, 750);
+  }
+
+  // click button to enter
+  btn.addEventListener('click', dismiss);
+
+  // also auto-dismiss after 6 seconds if they don't click
+  setTimeout(dismiss, 6000);
+})();
+
+
 
 /* ---- Preloader ---- */
 window.addEventListener('load', () => {
