@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpeg" href="Portfolio Picture/My logo.jpg" />
+  <link rel="apple-touch-icon" href="Portfolio Picture/My logo.jpg" />
 </head>
 <body>
 
@@ -60,10 +62,10 @@
   <!-- NAV -->
   <header id="header">
     <nav class="nav-inner">
-      <a href="#top" class="nav-logo">
+      <button type="button" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <img src="Portfolio Picture/My logo.jpg" alt="Scale Peedia" class="logo-img" />
         Scale<span>Peedia</span>
-      </a>
+      </button>
 
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home"     class="nav-link">Home</a></li>
@@ -76,9 +78,13 @@
 
       <a href="Abdulrahmon_CV.docx" target="_blank" rel="noopener" class="nav-cv-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        Down CV
+        Download CV
       </a>
 
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -97,7 +103,7 @@
           <span class="hero-typed" id="typed"></span><span class="blink"></span>
         </div>
         <p class="hero-desc">
-          I build digital experiences that look great, load fast, and convert visitors into customers — from <strong>Shopify</strong> & <strong>WordPress</strong> to custom <strong>frontend</strong> interfaces.
+          I build digital experiences that look great, load fast, and convert visitors into customers, from <strong>Shopify</strong> & <strong>WordPress</strong> to custom <strong>frontend</strong> interfaces.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">View My Work</a>
@@ -855,7 +861,7 @@
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
-            <h3 class="proj-title">SPYLT — Energy Drink Brand</h3>
+            <h3 class="proj-title">SPYLT Energy Drink Brand</h3>
             <p class="proj-desc">A visually stunning animated brand website for an energy drink — Next.js and GSAP for cinematic scroll animations and flavour reveals.</p>
             <div class="proj-tags"><span>Next.js</span><span>GSAP</span><span>JavaScript</span><span>CSS3</span><span>Vercel</span></div>
           </div>
@@ -893,7 +899,7 @@
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
-            <h3 class="proj-title">PlayNova — Mobile Games</h3>
+            <h3 class="proj-title">PlayNova Mobile Games</h3>
             <p class="proj-desc">A feature-rich gaming landing page with articles, gallery, pricing plans, team showcase, and a modern gaming aesthetic.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
@@ -912,7 +918,7 @@
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2024</span></div>
-            <h3 class="proj-title">Board — Gaming Website</h3>
+            <h3 class="proj-title">Board Gaming Website</h3>
             <p class="proj-desc">A complete gaming brand website with product discovery, VR gaming section, featured titles, and a bold immersive dark UI.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
@@ -931,7 +937,7 @@
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2024</span></div>
-            <h3 class="proj-title">Customify — Creative Agency</h3>
+            <h3 class="proj-title">Customify Creative Agency</h3>
             <p class="proj-desc">An interactive agency website with personalizable themes, colour switching, dynamic backgrounds, and a full services showcase.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
@@ -969,7 +975,7 @@
           </div>
           <div class="proj-body">
             <div class="proj-meta"><span class="proj-cat">Portfolio &amp; Landing Page</span><span class="proj-year">2025</span></div>
-            <h3 class="proj-title">MCBrain — AI Landing Page</h3>
+            <h3 class="proj-title">MCBrain AI Landing Page</h3>
             <p class="proj-desc">A futuristic AI SaaS landing page with features showcase, pricing plans, roadmap section, and a bold dark tech aesthetic.</p>
             <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>

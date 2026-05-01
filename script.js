@@ -242,7 +242,7 @@ if (contactForm) {
 }
 
 /* ---- Smooth scroll for anchor links ---- */
-document.querySelectorAll('a[href^="#"]:not(.nav-logo):not(.footer-logo)').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (target) {
@@ -283,30 +283,41 @@ filterBtns2.forEach(btn => {
     });
   });
 });
-/* ---- Logo click → scroll to top (all devices) ---- */
-function scrollToTop() {
-  // close mobile menu if open
-  var ham  = document.getElementById('hamburger');
-  var menu = document.getElementById('navMenu');
-  var ov   = document.getElementById('navOverlay');
-  if (menu && menu.classList.contains('open')) {
-    ham  && ham.classList.remove('active');
-    menu.classList.remove('open');
-    ov   && ov.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-  // scroll to top — try smooth, fallback for older mobile browsers
-  try {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } catch(e) {
-    window.scrollTo(0, 0);
-  }
-}
 
-['navLogoLink','footerLogoLink'].forEach(function(id) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  // both click (desktop) and touchend (mobile)
-  el.addEventListener('click',    function(e){ e.preventDefault(); scrollToTop(); });
-  el.addEventListener('touchend', function(e){ e.preventDefault(); scrollToTop(); });
-});
+/* ---- Theme Toggle ---- */
+(function () {
+  var html = document.documentElement;
+  var btn  = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  // restore saved preference
+  if (localStorage.getItem('theme') === 'light') {
+    html.classList.add('light');
+  }
+
+  btn.addEventListener('click', function () {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+})();
+
+/* ---- Logo scroll to top ---- */
+(function () {
+  document.querySelectorAll('.nav-logo, .footer-logo').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // close mobile menu if open
+      var menu = document.getElementById('navMenu');
+      var ham  = document.getElementById('hamburger');
+      var ov   = document.getElementById('navOverlay');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        ham && ham.classList.remove('active');
+        ov  && ov.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+})();

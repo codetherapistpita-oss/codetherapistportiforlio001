@@ -95,10 +95,12 @@ body {
 .nav-logo {
   display:flex; align-items:center; gap:9px;
   font-family:var(--display); font-size:1.3rem; font-weight:700;
-  color:var(--light); cursor:pointer; flex-shrink:0;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  pointer-events: all;
+  color:var(--light); background:none; border:none;
+  cursor:pointer !important; flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  pointer-events:all !important;
+  text-decoration:none;
 }
 .nav-logo span { color:var(--accent); }
 .logo-img {
@@ -986,6 +988,154 @@ a.cd-val:hover { color:var(--accent); }
 }
 
 
+
+/* ============================================================
+   LIGHT MODE
+   ============================================================ */
+:root.light {
+  --bg:        #f0f4f0;
+  --bg2:       #e4ece4;
+  --bg3:       #d8e8d8;
+  --green:     #016b40;
+  --accent:    #018c54;
+  --light:     #111111;
+  --muted:     rgba(17,17,17,0.55);
+  --border:    rgba(0,0,0,0.1);
+}
+
+/* body bg in light mode */
+:root.light body {
+  background: var(--bg);
+  color: var(--light);
+}
+
+/* nav in light mode */
+:root.light #header.scrolled {
+  background: rgba(240,244,240,0.95);
+  border-bottom: 1px solid rgba(1,140,84,0.2);
+}
+:root.light #header {
+  background: rgba(240,244,240,0.6);
+}
+
+/* cards in light mode */
+:root.light .sk-card,
+:root.light .proj-card,
+:root.light .testi-card,
+:root.light .contact-form,
+:root.light .info-item,
+:root.light .stat {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(1,140,84,0.15);
+}
+:root.light .sk-card:hover,
+:root.light .proj-card:hover {
+  background: rgba(255,255,255,1);
+  border-color: rgba(1,140,84,0.4);
+}
+
+/* text in light mode */
+:root.light .about-p,
+:root.light .proj-desc,
+:root.light .sk-card p,
+:root.light .testi-text,
+:root.light .contact-desc,
+:root.light .footer-tagline,
+:root.light .footer-copy { color: rgba(17,17,17,0.65); }
+
+:root.light .proj-title,
+:root.light .sk-card h3,
+:root.light .proj-body h3 { color: #111; }
+
+/* form inputs in light mode */
+:root.light .form-group input,
+:root.light .form-group textarea {
+  background: #fff;
+  border-color: rgba(1,140,84,0.25);
+  color: #111;
+}
+:root.light .form-group input::placeholder,
+:root.light .form-group textarea::placeholder { color: rgba(17,17,17,0.35); }
+
+/* footer in light mode */
+:root.light .footer {
+  background: rgba(220,235,220,0.8);
+}
+:root.light .stats-bar {
+  background: rgba(255,255,255,0.6);
+}
+
+/* bg effects hidden in light */
+:root.light .bg-grid,
+:root.light .bg-glow,
+:root.light .bg-glow2 { opacity: 0.3; }
+
+/* about visual card */
+:root.light .av-card {
+  background: linear-gradient(145deg,#d8ead8,rgba(1,140,84,0.12));
+}
+
+/* skills bar track */
+:root.light .skill-track,
+:root.light .bar-bg {
+  background: rgba(0,0,0,0.08);
+}
+
+/* contact box */
+:root.light .contact-box {
+  background: rgba(255,255,255,0.85);
+}
+
+/* proj tags */
+:root.light .proj-tags span,
+:root.light .proj-stack span {
+  background: rgba(1,140,84,0.08);
+  color: #016b40;
+  border-color: rgba(1,140,84,0.2);
+}
+
+/* hero text */
+:root.light .hero-greeting { color: rgba(17,17,17,0.55); }
+
+/* welcome screen */
+:root.light #welcomeScreen { background: #f0f4f0; }
+
+/* ---- Theme Toggle Button ---- */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(13,223,130,0.35);
+  background: rgba(13,223,130,0.06);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+.theme-toggle:hover {
+  background: rgba(13,223,130,0.15);
+  border-color: var(--accent);
+  transform: rotate(20deg);
+}
+
+/* dark mode → show moon, hide sun */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+/* light mode → show sun, hide moon */
+:root.light .theme-toggle .icon-moon { display: none; }
+:root.light .theme-toggle .icon-sun  { display: block; }
+
+:root.light .theme-toggle {
+  border-color: rgba(1,107,64,0.4);
+  background: rgba(1,107,64,0.08);
+  color: var(--accent);
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1064,3 +1214,157 @@ a.cd-val:hover { color:var(--accent); }
   .filter-btn   { padding:7px 14px; font-size:.78rem; }
   .sec-title    { font-size:1.9rem; }
 }
+
+/* ============================================================
+   LIGHT MODE — specific element fixes
+   ============================================================ */
+
+/* ============================================================
+   LIGHT MODE — TARGETED FIXES
+   ============================================================ */
+
+/* ── Hero floating chips ── */
+:root.light .float-chip {
+  background: rgba(3,15,15,0.85);
+  color: #f5f5f5;
+  border-color: rgba(13,223,130,.5);
+}
+:root.light .chip-dot { background: var(--accent); }
+
+/* ── Experience badge + Open to Work ring ── */
+:root.light .about-exp-badge,
+:root.light .av-badge {
+  background: var(--accent);
+  color: #030f0f;
+}
+
+/* ── "3+ Years Experience" hero chip ── */
+:root.light .chip-bottom {
+  background: rgba(3,15,15,0.85);
+  color: #f5f5f5;
+  border-color: rgba(13,223,130,.5);
+}
+
+/* ── GitHub icon — its path is fill="#fff" so invisible on white ── */
+/* Give GitHub tool card a dark background */
+:root.light .tool-card:nth-child(8) {
+  background: #1a1a2e !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+:root.light .tool-card:nth-child(8) span {
+  color: #f5f5f5 !important;
+}
+
+/* All SVG paths that are white — make dark in light mode */
+:root.light .skill-ico path[fill="#fff"],
+:root.light .skill-ico path[fill="white"],
+:root.light .skill-ico path[fill="#1B1817"] { fill: #1a1a1a !important; }
+
+:root.light .tool-card .tool-icon svg path[fill="#fff"],
+:root.light .tool-card .tool-icon svg path[fill="white"] { fill: #1a1a1a !important; }
+
+/* ── Nav ── */
+:root.light .nav-link         { color: rgba(17,17,17,0.65); }
+:root.light .nav-link:hover,
+:root.light .nav-link.active  { color: #111; }
+:root.light .nav-logo         { color: #111; }
+:root.light .nav-logo span    { color: var(--accent); }
+:root.light .nav-cv-btn       { background: var(--accent); color: #030f0f; }
+:root.light .hamburger span   { background: #111 !important; }
+
+/* ── Hero text ── */
+:root.light .hero-name        { color: #111; }
+:root.light .hero-greeting,
+:root.light .hero-role-wrap,
+:root.light .hero-desc        { color: rgba(17,17,17,0.65); }
+:root.light .scroll-cue       { color: rgba(17,17,17,0.5); }
+
+/* ── Section headers ── */
+:root.light .sec-title,
+:root.light .title            { color: #111; }
+:root.light .sec-tag          { color: var(--accent); }
+
+/* ── About ── */
+:root.light .stat             { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,0.2); }
+:root.light .sl               { color: rgba(17,17,17,0.6); }
+:root.light .av-card          { background:linear-gradient(145deg,#d8ead8,rgba(1,140,84,.1)); }
+:root.light .about-img        { border-color: rgba(1,140,84,.25); }
+
+/* ── Skills ── */
+:root.light .skill-track,
+:root.light .bar-bg           { background: rgba(0,0,0,0.1); }
+:root.light .skill-name,
+:root.light .skill-name-wrap  { color: #111; }
+:root.light .skill-pct        { color: var(--accent); }
+:root.light .sk-card          { background:rgba(255,255,255,0.85); border-color:rgba(1,140,84,.15); }
+:root.light .sk-card h3       { color: #111; }
+:root.light .sk-card p        { color: rgba(17,17,17,0.6); }
+:root.light .tool-card        { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,0.2); color:#111; }
+:root.light .tool-card span   { color: #111; }
+
+/* ── Projects ── */
+:root.light .proj-card        { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,.15); }
+:root.light .proj-title,
+:root.light .proj-body h3     { color: #111; }
+:root.light .proj-desc        { color: rgba(17,17,17,0.6); }
+:root.light .proj-tags span   { background:rgba(1,140,84,.08); color:#016b40; border-color:rgba(1,140,84,.2); }
+:root.light .proj-num         { color: rgba(17,17,17,0.1); }
+:root.light .filter-btn       { border-color:rgba(1,140,84,.25); color:rgba(17,17,17,0.6); }
+:root.light .filter-btn.active,
+:root.light .filter-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(1,140,84,.08); }
+
+/* ── Testimonials ── */
+:root.light .testi-card       { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,.15); }
+:root.light .testi-text       { color:rgba(17,17,17,0.65); }
+:root.light .testi-info span  { color:rgba(17,17,17,0.55); }
+:root.light .testi-info strong{ color:#111; }
+:root.light .testi-quote-icon { color:var(--accent); }
+
+/* ── Contact ── */
+:root.light .contact-box      { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,.2); }
+:root.light .contact-title    { color:#111; }
+:root.light .contact-sub,
+:root.light .contact-desc     { color:rgba(17,17,17,0.6); }
+:root.light .contact-form     { background:rgba(255,255,255,0.9); border-color:rgba(1,140,84,.15); }
+:root.light .form-group label { color:rgba(17,17,17,0.65); }
+:root.light .form-group input,
+:root.light .form-group textarea {
+  background:#fff; border-color:rgba(1,140,84,.25); color:#111;
+}
+:root.light .form-group input::placeholder,
+:root.light .form-group textarea::placeholder { color:rgba(17,17,17,0.3); }
+:root.light .cd-label         { color:rgba(17,17,17,0.55); }
+:root.light .cd-val           { color:#111; }
+
+/* ── Social icons ── */
+:root.light .fsoc,
+:root.light .c-soc-btn,
+:root.light .hero-social-link {
+  border-color:rgba(1,140,84,.25); color:rgba(17,17,17,0.6);
+  background:rgba(255,255,255,0.5);
+}
+:root.light .fsoc:hover,
+:root.light .c-soc-btn:hover,
+:root.light .hero-social-link:hover {
+  border-color:var(--accent); color:var(--accent); background:rgba(1,140,84,.08);
+}
+
+/* ── Footer ── */
+:root.light .footer-col h4    { color:#111; }
+:root.light .footer-logo      { color:#111; }
+:root.light .footer-bottom-inner { border-color:rgba(0,0,0,0.08); }
+:root.light .footer-bottom-inner p { color:rgba(17,17,17,0.55); }
+:root.light .back-top         { color:rgba(17,17,17,0.5); }
+
+/* ── Stats bar ── */
+:root.light .stats-bar        { background:rgba(255,255,255,0.7); border-color:rgba(1,140,84,.15); }
+:root.light .stat-lbl         { color:rgba(17,17,17,0.6); }
+
+/* ── Preloader ── */
+:root.light #preloader        { background:#f0f4f0; }
+:root.light .pre-logo         { color:#111; }
+
+/* ── BG effects (soften in light) ── */
+:root.light .bg-grid,
+:root.light .bg-glow,
+:root.light .bg-glow2         { opacity:0.25; }
