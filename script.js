@@ -290,15 +290,21 @@ filterBtns2.forEach(btn => {
   var btn  = document.getElementById('themeToggle');
   if (!btn) return;
 
-  // restore saved preference
+  // restore saved preference on load
   if (localStorage.getItem('theme') === 'light') {
     html.classList.add('light');
   }
 
-  btn.addEventListener('click', function () {
+  function toggle(e) {
+    e.preventDefault();
+    e.stopPropagation();
     html.classList.toggle('light');
     localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
-  });
+  }
+
+  // click for desktop, touchend for mobile
+  btn.addEventListener('click',    toggle);
+  btn.addEventListener('touchend', toggle, { passive: false });
 })();
 
 /* ---- Logo scroll to top ---- */
