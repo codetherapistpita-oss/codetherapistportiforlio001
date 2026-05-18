@@ -89,7 +89,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ---- Typewriter ---- */
-const roles = ['Frontend Developer.','Shopify Developer.','WordPress Developer.','UI/UX Designer.'];
+const roles = ['Creative Developer.','Full-Stack Developer.','AI Agent Builder.','Unity Developer.'];
 let rIdx = 0, cIdx = 0, deleting = false;
 const twEl = document.getElementById('typed');
 function typeLoop() {
@@ -236,7 +236,7 @@ if (contactForm) {
       text.textContent = 'Try Again';
       btn.disabled = false;
       btn.style.opacity = '1';
-      alert('Network error — please email me directly at thescalepeedia@gmail.com');
+      alert('Network error — please email me directly at codetherapist.pita@gmail.com');
     }
   });
 }
