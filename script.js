@@ -1,13 +1,20 @@
-/* ---- Welcome Screen — Yassin style ---- */
+/* ==============================================
+   Gyagenda Peter Owns the code
+   Code Therapist portfolio — script.js
+   ============================================== */
+
+/* ---- Welcome Screen (3 seconds) ---- */
 (function () {
   const screen = document.getElementById('welcomeScreen');
   const btn    = document.getElementById('wcEnter');
   if (!screen) return;
 
-  // lock scroll
   document.body.style.overflow = 'hidden';
 
+  let dismissed = false;
   function dismiss() {
+    if (dismissed) return;
+    dismissed = true;
     screen.classList.add('wc-exit');
     document.body.style.overflow = '';
     setTimeout(() => {
@@ -15,20 +22,17 @@
     }, 750);
   }
 
-  // click button to enter
-  btn.addEventListener('click', dismiss);
-
-  // also auto-dismiss after 6 seconds if they don't click
-  setTimeout(dismiss, 4500);
+  if (btn) btn.addEventListener('click', dismiss);
+  // Auto-dismiss after 3 seconds if they don't click
+  setTimeout(dismiss, 3000);
 })();
 
-
-
-/* ---- Preloader ---- */
+/* ---- Preloader (3 seconds after load) ---- */
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('preloader').classList.add('done');
-  }, 2200);
+    const pre = document.getElementById('preloader');
+    if (pre) pre.classList.add('done');
+  }, 3000);
 });
 
 /* ---- Custom Cursor ---- */
@@ -36,48 +40,66 @@ const cursor = document.getElementById('cursor');
 const trail  = document.getElementById('cursor-trail');
 let mx = 0, my = 0, tx = 0, ty = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = (mx - 5) + 'px';
-  cursor.style.top  = (my - 5) + 'px';
-});
-(function loopTrail() {
-  tx += (mx - tx) * 0.14;
-  ty += (my - ty) * 0.14;
-  trail.style.left = (tx - 17) + 'px';
-  trail.style.top  = (ty - 17) + 'px';
-  requestAnimationFrame(loopTrail);
-})();
-document.querySelectorAll('a,button,.proj-card,.tool-card,.stat-item,.info-item').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'scale(2.5)';
-    trail.style.transform  = 'scale(1.5)';
-    trail.style.opacity    = '0.7';
+if (cursor && trail) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = (mx - 5) + 'px';
+    cursor.style.top  = (my - 5) + 'px';
   });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'scale(1)';
-    trail.style.transform  = 'scale(1)';
-    trail.style.opacity    = '0.45';
+  (function loopTrail() {
+    tx += (mx - tx) * 0.14;
+    ty += (my - ty) * 0.14;
+    trail.style.left = (tx - 17) + 'px';
+    trail.style.top  = (ty - 17) + 'px';
+    requestAnimationFrame(loopTrail);
+  })();
+  document.querySelectorAll('a,button,.proj-card,.tool-card,.stat-item,.info-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2.5)';
+      trail.style.transform  = 'scale(1.5)';
+      trail.style.opacity    = '0.7';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      trail.style.transform  = 'scale(1)';
+      trail.style.opacity    = '0.45';
+    });
   });
-});
+}
 
 /* ---- Header scroll ---- */
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+}
 
 /* ---- Mobile menu ---- */
 const hamburger  = document.getElementById('hamburger');
 const navMenu    = document.getElementById('navMenu');
 const navOverlay = document.getElementById('navOverlay');
 
-function openMenu()  { hamburger.classList.add('active'); navMenu.classList.add('open'); navOverlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { hamburger.classList.remove('active'); navMenu.classList.remove('open'); navOverlay.classList.remove('show'); document.body.style.overflow = ''; }
+function openMenu()  {
+  if (!hamburger || !navMenu || !navOverlay) return;
+  hamburger.classList.add('active');
+  navMenu.classList.add('open');
+  navOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  if (!hamburger || !navMenu || !navOverlay) return;
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('open');
+  navOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
 
-hamburger.addEventListener('click', () => navMenu.classList.contains('open') ? closeMenu() : openMenu());
-navOverlay.addEventListener('click', closeMenu);
-document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+if (hamburger && navMenu && navOverlay) {
+  hamburger.addEventListener('click', () => navMenu.classList.contains('open') ? closeMenu() : openMenu());
+  navOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+}
 
 /* ---- Active nav on scroll ---- */
 const sections = document.querySelectorAll('section[id]');
@@ -93,6 +115,7 @@ const roles = ['Creative Developer.','Full-Stack Developer.','AI Agent Builder.'
 let rIdx = 0, cIdx = 0, deleting = false;
 const twEl = document.getElementById('typed');
 function typeLoop() {
+  if (!twEl) return;
   const word = roles[rIdx];
   if (!deleting) {
     twEl.textContent = word.slice(0, ++cIdx);
@@ -103,16 +126,15 @@ function typeLoop() {
   }
   setTimeout(typeLoop, deleting ? 46 : 88);
 }
-setTimeout(typeLoop, 2500); // wait for preloader
+setTimeout(typeLoop, 3000);
 
 /* ---- Scroll Reveal ---- */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-    const d = parseInt(entry.target.dataset.delay || 0);
+    const d = parseInt(entry.target.dataset.delay || 0, 10);
     setTimeout(() => {
       entry.target.classList.add('in');
-      // skill fill bars
       const fill = entry.target.querySelector('.skill-fill');
       if (fill) fill.style.width = fill.dataset.w + '%';
     }, d);
@@ -153,26 +175,22 @@ const statsObs = new IntersectionObserver(entries => {
 const statsBar = document.querySelector('.stats-bar');
 if (statsBar) statsObs.observe(statsBar);
 
-/* ---- Project Filter Tabs ---- */
+/* ---- Project Filter Tabs (single handler) ---- */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projCards  = document.querySelectorAll('.proj-card');
 
+// Default: show only frontend on load
+projCards.forEach(card => {
+  card.style.display = card.dataset.cat === 'frontend' ? '' : 'none';
+});
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // update active button
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.dataset.filter;
     projCards.forEach(card => {
-      if (filter === 'all' || card.dataset.cat === filter) {
-        card.classList.remove('hidden');
-        // re-trigger reveal if needed
-        card.style.opacity = '';
-        card.style.transform = '';
-      } else {
-        card.classList.add('hidden');
-      }
+      card.style.display = card.dataset.cat === filter ? '' : 'none';
     });
   });
 });
@@ -180,14 +198,12 @@ filterBtns.forEach(btn => {
 /* ---- Project cards open in new tab ---- */
 projCards.forEach(card => {
   card.addEventListener('click', e => {
-    // only if not clicking the link button directly
     const link = card.querySelector('.proj-view-btn');
     if (link && e.target !== link && !link.contains(e.target)) {
       const href = link.getAttribute('href');
       if (href && href !== '#') window.open(href, '_blank', 'noopener');
     }
   });
-  // pointer cursor feel
   card.style.cursor = 'pointer';
 });
 
@@ -199,9 +215,9 @@ if (contactForm) {
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn  = contactForm.querySelector('.form-submit');
-    const text = btn.querySelector('.btn-text');
+    const text = btn && btn.querySelector('.btn-text');
+    if (!btn || !text) return;
 
-    // loading state
     text.textContent = 'Sending...';
     btn.disabled = true;
     btn.style.opacity = '0.75';
@@ -216,17 +232,15 @@ if (contactForm) {
       });
 
       if (res.ok) {
-        // success
-        formSuccess.classList.add('show');
+        if (formSuccess) formSuccess.classList.add('show');
         contactForm.reset();
         text.textContent = 'Send Message';
         btn.disabled = false;
         btn.style.opacity = '1';
-        setTimeout(() => formSuccess.classList.remove('show'), 6000);
+        setTimeout(() => { if (formSuccess) formSuccess.classList.remove('show'); }, 6000);
       } else {
-        // server error
         const json = await res.json();
-        const msg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong.';
+        const msg = json.errors ? json.errors.map(err => err.message).join(', ') : 'Something went wrong.';
         text.textContent = 'Try Again';
         btn.disabled = false;
         btn.style.opacity = '1';
@@ -244,18 +258,20 @@ if (contactForm) {
 /* ---- Smooth scroll for anchor links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const sel = anchor.getAttribute('href');
+    if (!sel || sel === '#') return;
+    const target = document.querySelector(sel);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
+
 /* ---- Testimonials: clone cards for infinite marquee ---- */
-(function() {
+(function () {
   const track = document.getElementById('testiTrack');
   if (!track) return;
-  // clone all cards and append so the animation loops seamlessly
   const cards = Array.from(track.children);
   cards.forEach(card => {
     const clone = card.cloneNode(true);
@@ -264,47 +280,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 })();
 
-/* ---- Project filter — updated for portfolio category ---- */
-const filterBtns2 = document.querySelectorAll('.filter-btn');
-const projCards2  = document.querySelectorAll('.proj-card');
-
-// default: show only frontend on load
-projCards2.forEach(card => {
-  card.style.display = card.dataset.cat === 'frontend' ? '' : 'none';
-});
-
-filterBtns2.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns2.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    projCards2.forEach(card => {
-      card.style.display = card.dataset.cat === filter ? '' : 'none';
-    });
-  });
-});
-
-/* ---- Theme Toggle ---- */
+/* ---- Theme Toggle (click only — avoids double-fire on mobile) ---- */
 (function () {
   var html = document.documentElement;
   var btn  = document.getElementById('themeToggle');
   if (!btn) return;
 
-  // restore saved preference on load
   if (localStorage.getItem('theme') === 'light') {
     html.classList.add('light');
   }
 
-  function toggle(e) {
+  btn.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     html.classList.toggle('light');
     localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
-  }
-
-  // click for desktop, touchend for mobile
-  btn.addEventListener('click',    toggle);
-  btn.addEventListener('touchend', toggle, { passive: false });
+  });
 })();
 
 /* ---- Logo scroll to top ---- */
@@ -314,14 +305,13 @@ filterBtns2.forEach(btn => {
       e.preventDefault();
       e.stopPropagation();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      // close mobile menu if open
       var menu = document.getElementById('navMenu');
       var ham  = document.getElementById('hamburger');
       var ov   = document.getElementById('navOverlay');
       if (menu && menu.classList.contains('open')) {
         menu.classList.remove('open');
-        ham && ham.classList.remove('active');
-        ov  && ov.classList.remove('show');
+        if (ham) ham.classList.remove('active');
+        if (ov) ov.classList.remove('show');
         document.body.style.overflow = '';
       }
     });

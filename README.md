@@ -1,8 +1,11 @@
+<!-- Gyagenda Peter Owns the code -->
 # Code Therapist — Developer Portfolio
 
 <div align="center">
 
-**Personal portfolio for Gyagenda Peter K · brand: Code Therapist**
+**Personal portfolio for Gyagenda Peter K · brand: Code Therapist · company: Byte Lab**
+
+> Gyagenda Peter Owns the code. All showcased projects were coded by Peter.
 
 A modern, animated portfolio showcasing full-stack web work, client projects, and creative development.
 
@@ -27,13 +30,14 @@ A modern, animated portfolio showcasing full-stack web work, client projects, an
 | | |
 |---|---|
 | **Developer** | **Gyagenda Peter K** |
-| **Brand / studio** | **Code Therapist** · [CODE THERAPIST EMPIRE](https://github.com/codetherapistpita-oss) |
+| **Brand** | **Code Therapist** |
+| **Company** | **Byte Lab** |
 | **Role** | Creative Developer · Full-Stack · AI & Unity |
 | **Location** | Kampala, Uganda |
 | **Email** | [codetherapist.pita@gmail.com](mailto:codetherapist.pita@gmail.com) |
 | **GitHub** | [@codetherapistpita-oss](https://github.com/codetherapistpita-oss) |
 
-This repository is **my own portfolio website** — designed, built, and maintained by me. It is not a third-party template download; the site was customized for my brand, content, skills, projects, and downloadable CV.
+This repository is **my own portfolio website** — Gyagenda Peter Owns the code. Designed, built, and maintained by me for Code Therapist and Byte Lab.
 
 </td>
 </tr>

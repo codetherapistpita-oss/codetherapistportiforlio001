@@ -1,4 +1,5 @@
 /* ==============================================
+   Gyagenda Peter Owns the code
    CODE THERAPIST  |  style.css
    ============================================== */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -71,7 +72,7 @@ body {
 }
 .pre-fill {
   height:100%; width:0; background:var(--accent); border-radius:100px;
-  animation:preLoad 2s var(--ease) forwards;
+  animation:preLoad 3s var(--ease) forwards;
 }
 @keyframes preLoad { to { width:100%; } }
 
@@ -573,7 +574,11 @@ body {
 .proj-year { color:var(--muted); font-size:.78rem; }
 .proj-title {
   font-family:var(--display); font-size:1.1rem; font-weight:700;
-  color:var(--light); margin-bottom:.5rem;
+  color:var(--light); margin-bottom:.35rem;
+}
+.proj-credit {
+  font-size:.72rem; color:var(--accent); font-weight:600;
+  letter-spacing:.3px; margin-bottom:.55rem;
 }
 .proj-desc { font-size:.82rem; color:var(--muted); line-height:1.65; margin-bottom:1rem; }
 .proj-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
@@ -1314,6 +1319,7 @@ a.cd-val:hover { color:var(--accent); }
 :root.light .proj-title,
 :root.light .proj-body h3     { color: #111; }
 :root.light .proj-desc        { color: rgba(17,17,17,0.6); }
+:root.light .proj-credit      { color: var(--green); }
 :root.light .proj-tags span   { background:rgba(1,140,84,.08); color:#016b40; border-color:rgba(1,140,84,.2); }
 :root.light .proj-num         { color: rgba(17,17,17,0.1); }
 :root.light .filter-btn       { border-color:rgba(1,140,84,.25); color:rgba(17,17,17,0.6); }
