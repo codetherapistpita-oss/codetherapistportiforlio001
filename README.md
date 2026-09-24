@@ -11,7 +11,9 @@ A modern, animated portfolio showcasing full-stack web work, client projects, an
 
 **Official live site:** [https://codetherapist.netlify.app/](https://codetherapist.netlify.app/)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-0ddf82?style=for-the-badge&logo=github&logoColor=111)](https://codetherapistpita-oss.github.io/codetherapistportiforlio001/)
+This GitHub copy is an archive. Google should use the Netlify URL, not GitHub Pages.
+
+[![Official site](https://img.shields.io/badge/Official_site-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://codetherapist.netlify.app/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -148,13 +150,11 @@ Open [http://localhost:5500](http://localhost:5500)
 
 ---
 
-## Live site (GitHub Pages)
+## Official site
 
-1. Repo **Settings** → **Pages**
-2. Branch **main**, folder **/ (root)**
-3. Site URL:
+**https://codetherapist.netlify.app/**
 
-**https://codetherapistpita-oss.github.io/codetherapistportiforlio001/**
+GitHub Pages for this repo is only a backup copy. It is marked `noindex` so it does not compete with Netlify.
 
 ---
 

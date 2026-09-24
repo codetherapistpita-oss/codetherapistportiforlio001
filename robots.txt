@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
+# This GitHub Pages copy is an archive. Official indexable site:
 Sitemap: https://codetherapist.netlify.app/sitemap.xml
 # Identity file for AI assistants: /llms.txt
 # Extra photos for Google Images are listed in sitemap.xml
