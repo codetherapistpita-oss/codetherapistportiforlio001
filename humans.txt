@@ -2,9 +2,9 @@
 Name: Gyagenda Peter Katabalwa
 Also known as: Peter Gyagenda, Gyagenda Peter, Gyagenda Peter K, Katabalwa, Code Therapist
 Company: Byte Lab (ByteLabUg)
-Location: Kampala, Uganda
-Email: codetherapist.pita@gmail.com
-WhatsApp: +256 762 426 842
+Location: Munyonyo and Buziga (Buzigga), Kampala, Uganda
+Gmail: codetherapist.pita@gmail.com
+WhatsApp: 0762426842 / +256 762 426 842
 Site: https://codetherapist.netlify.app/
 GitHub: https://github.com/codetherapistpita-oss
 
