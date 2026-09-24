@@ -1,0 +1,16 @@
+{
+  "name": "Code Therapist — Gyagenda Peter Katabalwa",
+  "short_name": "Code Therapist",
+  "description": "Official Code Therapist portfolio. Gyagenda Peter Katabalwa, also Peter Gyagenda and Katabalwa, founder of Byte Lab in Kampala.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f0c",
+  "theme_color": "#0ddf82",
+  "icons": [
+    {
+      "src": "Portfolio Picture/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

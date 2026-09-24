@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://codetherapist.netlify.app/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/peter-hero-1.jpg</image:loc>
+      <image:title>Gyagenda Peter Katabalwa of Byte Lab Uganda, Code Therapist</image:title>
+      <image:caption>Gyagenda Peter Katabalwa of Byte Lab Uganda outside the office</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/peter-hero-2.jpg</image:loc>
+      <image:title>Gyagenda Peter Katabalwa Code Therapist in Byte Lab uniform</image:title>
+      <image:caption>Gyagenda Peter Katabalwa, Code Therapist, in Byte Lab Uganda uniform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/peter-hero-3.jpg</image:loc>
+      <image:title>Gyagenda Peter Katabalwa in Muyenga Kampala</image:title>
+      <image:caption>Gyagenda Peter Katabalwa in Muyenga, Kampala — Code Therapist and Byte Lab</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/gyagenda-hero.jpeg</image:loc>
+      <image:title>Gyagenda Peter Katabalwa Code Therapist Kampala</image:title>
+      <image:caption>Gyagenda Peter Katabalwa, Code Therapist creative developer in Kampala Uganda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/gyagenda-about.jpeg</image:loc>
+      <image:title>Gyagenda Peter Katabalwa Code Therapist Byte Lab</image:title>
+      <image:caption>Gyagenda Peter Katabalwa of Code Therapist and Byte Lab</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/bytelab-logo.png</image:loc>
+      <image:title>Byte Lab Uganda logo ByteLabUg Beyond Code</image:title>
+      <image:caption>Byte Lab Uganda logo — ByteLabUg, Beyond Code</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codetherapist.netlify.app/Portfolio%20Picture/logo.png</image:loc>
+      <image:title>Code Therapist logo</image:title>
+      <image:caption>Code Therapist brand mark for Gyagenda Peter Katabalwa</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://codetherapist.netlify.app/cv.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

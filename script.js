@@ -3,69 +3,21 @@
    Code Therapist portfolio — script.js
    ============================================== */
 
-/* ---- Welcome Screen (3 seconds) ---- */
+/* ---- Intro: Code Therapist + dotted spinner, then homepage flow ---- */
 (function () {
-  const screen = document.getElementById('welcomeScreen');
-  const btn    = document.getElementById('wcEnter');
-  if (!screen) return;
-
+  const pre = document.getElementById('preloader');
   document.body.style.overflow = 'hidden';
 
-  let dismissed = false;
-  function dismiss() {
-    if (dismissed) return;
-    dismissed = true;
-    screen.classList.add('wc-exit');
+  function ready() {
+    if (pre) pre.classList.add('done');
+    document.body.classList.remove('booting');
+    document.body.classList.add('page-ready');
     document.body.style.overflow = '';
-    setTimeout(() => {
-      screen.style.display = 'none';
-    }, 750);
+    window.dispatchEvent(new Event('ct-ready'));
   }
 
-  if (btn) btn.addEventListener('click', dismiss);
-  // Auto-dismiss after 3 seconds if they don't click
-  setTimeout(dismiss, 3000);
+  setTimeout(ready, 2000);
 })();
-
-/* ---- Preloader (3 seconds after load) ---- */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const pre = document.getElementById('preloader');
-    if (pre) pre.classList.add('done');
-  }, 3000);
-});
-
-/* ---- Custom Cursor ---- */
-const cursor = document.getElementById('cursor');
-const trail  = document.getElementById('cursor-trail');
-let mx = 0, my = 0, tx = 0, ty = 0;
-
-if (cursor && trail) {
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = (mx - 5) + 'px';
-    cursor.style.top  = (my - 5) + 'px';
-  });
-  (function loopTrail() {
-    tx += (mx - tx) * 0.14;
-    ty += (my - ty) * 0.14;
-    trail.style.left = (tx - 17) + 'px';
-    trail.style.top  = (ty - 17) + 'px';
-    requestAnimationFrame(loopTrail);
-  })();
-  document.querySelectorAll('a,button,.proj-card,.tool-card,.stat-item,.info-item').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'scale(2.5)';
-      trail.style.transform  = 'scale(1.5)';
-      trail.style.opacity    = '0.7';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'scale(1)';
-      trail.style.transform  = 'scale(1)';
-      trail.style.opacity    = '0.45';
-    });
-  });
-}
 
 /* ---- Header scroll ---- */
 const header = document.getElementById('header');
@@ -83,6 +35,7 @@ const navOverlay = document.getElementById('navOverlay');
 function openMenu()  {
   if (!hamburger || !navMenu || !navOverlay) return;
   hamburger.classList.add('active');
+  hamburger.setAttribute('aria-expanded', 'true');
   navMenu.classList.add('open');
   navOverlay.classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -90,6 +43,7 @@ function openMenu()  {
 function closeMenu() {
   if (!hamburger || !navMenu || !navOverlay) return;
   hamburger.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', 'false');
   navMenu.classList.remove('open');
   navOverlay.classList.remove('show');
   document.body.style.overflow = '';
@@ -126,7 +80,7 @@ function typeLoop() {
   }
   setTimeout(typeLoop, deleting ? 46 : 88);
 }
-setTimeout(typeLoop, 3000);
+window.addEventListener('ct-ready', () => setTimeout(typeLoop, 900), { once: true });
 
 /* ---- Scroll Reveal ---- */
 const revealObs = new IntersectionObserver(entries => {
@@ -207,11 +161,54 @@ projCards.forEach(card => {
   card.style.cursor = 'pointer';
 });
 
-/* ---- Contact Form (Formspree) ---- */
+/* ---- Contact Form → Gmail as Byte@info ---- */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
+const HIRE_GMAIL = 'codetherapist.pita@gmail.com';
+const SITE_ORIGIN = 'https://codetherapist.netlify.app';
+const CONTACT_GMAIL_HOOK = 'https://script.google.com/macros/s/AKfycbxyBLA93X9A1eQq_OHkWHHGE2MDtRwu6OakmtAMf7KX12T30DRQUtY707-2n5PBJbqPjA/exec';
+
+const WHATSAPP_HIRE = '256762426842';
 
 if (contactForm) {
+  const whatsappSubmit = document.getElementById('whatsappSubmit');
+
+  function formFields() {
+    const data = new FormData(contactForm);
+    return {
+      name: String(data.get('name') || '').trim(),
+      email: String(data.get('email') || '').trim(),
+      subject: String(data.get('subject') || '').trim(),
+      message: String(data.get('message') || '').trim(),
+      honey: String(data.get('honey') || '').trim(),
+      page: window.location.href,
+      website: SITE_ORIGIN
+    };
+  }
+
+  function openWhatsAppEnquiry() {
+    if (!contactForm.reportValidity()) return;
+    const fields = formFields();
+    const text = [
+      'CODE THERAPIST / Byte Lab enquiry',
+      '',
+      'Name: ' + fields.name,
+      'Email: ' + fields.email,
+      'Subject: ' + fields.subject,
+      '',
+      fields.message
+    ].join('\n');
+    window.open(
+      'https://wa.me/' + WHATSAPP_HIRE + '?text=' + encodeURIComponent(text),
+      '_blank',
+      'noopener'
+    );
+  }
+
+  if (whatsappSubmit) {
+    whatsappSubmit.addEventListener('click', openWhatsAppEnquiry);
+  }
+
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn  = contactForm.querySelector('.form-submit');
@@ -222,35 +219,52 @@ if (contactForm) {
     btn.disabled = true;
     btn.style.opacity = '0.75';
 
-    const data = new FormData(contactForm);
+    const payload = formFields();
 
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+    function markSent() {
+      if (formSuccess) formSuccess.classList.add('show');
+      contactForm.reset();
+      text.textContent = 'Send to Gmail';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      setTimeout(() => { if (formSuccess) formSuccess.classList.remove('show'); }, 6000);
+    }
 
-      if (res.ok) {
-        if (formSuccess) formSuccess.classList.add('show');
-        contactForm.reset();
-        text.textContent = 'Send Message';
-        btn.disabled = false;
-        btn.style.opacity = '1';
-        setTimeout(() => { if (formSuccess) formSuccess.classList.remove('show'); }, 6000);
-      } else {
-        const json = await res.json();
-        const msg = json.errors ? json.errors.map(err => err.message).join(', ') : 'Something went wrong.';
-        text.textContent = 'Try Again';
-        btn.disabled = false;
-        btn.style.opacity = '1';
-        alert('Error: ' + msg);
-      }
-    } catch (err) {
+    function markFail() {
       text.textContent = 'Try Again';
       btn.disabled = false;
       btn.style.opacity = '1';
-      alert('Network error — please email me directly at codetherapist.pita@gmail.com');
+    }
+
+    function postToGmail(fields) {
+      return fetch(CONTACT_GMAIL_HOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(fields)
+      }).then(() => true).catch(() => false);
+    }
+
+    try {
+      if (location.hostname.indexOf('netlify') !== -1) {
+        const netlify = new URLSearchParams(payload);
+        netlify.set('form-name', 'hire-peter');
+        netlify.set('bot-field', '');
+        netlify.set('client_name', payload.name);
+        netlify.set('client_email', payload.email);
+        netlify.set('sent_from', 'Byte@info website contact form');
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: netlify.toString()
+        }).catch(() => {});
+      }
+
+      const sent = await postToGmail(payload);
+      if (sent) markSent();
+      else markFail();
+    } catch (err) {
+      markFail();
     }
   });
 }
@@ -280,21 +294,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 })();
 
-/* ---- Theme Toggle (click only — avoids double-fire on mobile) ---- */
+/* ---- Theme picker (6 modes) ---- */
 (function () {
   var html = document.documentElement;
+  var wrap = document.querySelector('.theme-wrap');
   var btn  = document.getElementById('themeToggle');
-  if (!btn) return;
+  var panel = document.getElementById('themePanel');
+  var MODES = ['dark', 'light', 'forest', 'aurora', 'premium', 'midnight'];
+  if (!btn || !wrap || !panel) return;
 
-  if (localStorage.getItem('theme') === 'light') {
-    html.classList.add('light');
+  function applyTheme(name) {
+    var theme = MODES.indexOf(name) !== -1 ? name : 'dark';
+    html.setAttribute('data-theme', theme);
+    html.classList.toggle('light', theme === 'light');
+    try { localStorage.setItem('theme', theme); } catch (err) {}
+    wrap.querySelectorAll('.theme-mode').forEach(function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-theme') === theme);
+    });
+    try {
+      window.dispatchEvent(new CustomEvent('ct-theme', { detail: { theme: theme } }));
+    } catch (err) {}
   }
+
+  function openPanel() {
+    wrap.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function closePanel() {
+    wrap.classList.remove('is-open');
+    panel.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  var saved = 'dark';
+  try { saved = localStorage.getItem('theme') || 'dark'; } catch (err) {}
+  applyTheme(saved);
 
   btn.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    html.classList.toggle('light');
-    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+    wrap.classList.contains('is-open') ? closePanel() : openPanel();
+  });
+  wrap.querySelectorAll('.theme-mode').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      applyTheme(el.getAttribute('data-theme'));
+      closePanel();
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!wrap.contains(e.target)) closePanel();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePanel();
   });
 })();
 
@@ -316,4 +370,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
     });
   });
+})();
+
+/* ---- Hero portrait slideshow ---- */
+(function () {
+  const frame = document.getElementById('heroSlider');
+  if (!frame) return;
+  const slides = Array.from(frame.querySelectorAll('.hero-photo'));
+  const dots = Array.from(document.querySelectorAll('.hero-dots .hero-dot'));
+  if (slides.length < 2) return;
+
+  let index = 0;
+  let timer;
+
+  function show(next) {
+    slides[index].classList.remove('is-active');
+    if (dots[index]) dots[index].classList.remove('is-active');
+    index = (next + slides.length) % slides.length;
+    slides[index].classList.add('is-active');
+    if (dots[index]) dots[index].classList.add('is-active');
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(() => show(index + 1), 4000);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      show(i);
+      start();
+    });
+  });
+
+  frame.addEventListener('mouseenter', stop);
+  frame.addEventListener('mouseleave', start);
+  start();
 })();

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codetherapist.netlify.app/sitemap.xml
+# Identity file for AI assistants: /llms.txt
+# Extra photos for Google Images are listed in sitemap.xml

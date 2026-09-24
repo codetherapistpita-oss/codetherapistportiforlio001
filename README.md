@@ -3,11 +3,13 @@
 
 <div align="center">
 
-**Personal portfolio for Gyagenda Peter K · brand: Code Therapist · company: Byte Lab**
+**Personal portfolio for Gyagenda Peter Katabalwa · brand: Code Therapist · company: Byte Lab**
 
 > Gyagenda Peter Owns the code. All showcased projects were coded by Peter.
 
 A modern, animated portfolio showcasing full-stack web work, client projects, and creative development.
+
+**Official live site:** [https://codetherapist.netlify.app/](https://codetherapist.netlify.app/)
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-0ddf82?style=for-the-badge&logo=github&logoColor=111)](https://codetherapistpita-oss.github.io/codetherapistportiforlio001/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
